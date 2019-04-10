@@ -7,7 +7,7 @@ export class Header extends React.Component{
         this.state = {
             isLoggedIn: false,
             loggedUser: false
-        }
+        };
     }
 
     toggleUser = ()=>{
@@ -18,17 +18,17 @@ export class Header extends React.Component{
                     loggedUser: false
                 });
                 Alert.alert('User logged out');
-            });
+            })
         }
         else {
-            this.props.navigate('LoginRT');
+            this.props.navigate('LoginRT')
         }
     }
 
     componentDidMount(){
-        AsyncStorage.setItem('userLoggedIn', 'none', (err,result) => {
+        AsyncStorage.getItem('userLoggedIn', 'none', (err,result) => {
             if (result==='none') {
-                console.log('None')
+                console.log('None');
             }
             else if (result === null){
                 AsyncStorage.setItem('userLoggedIn', 'none' , (err, result) => {
@@ -41,7 +41,7 @@ export class Header extends React.Component{
                     loggedUser: result
                 });
             }
-        });
+        })
     }
 
     render(){

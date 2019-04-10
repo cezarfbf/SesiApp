@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, FlatList, Image, TouchableWithoutFeedback } from 'react-native';
+import { Text, View, FlatList, Image, TouchableWithoutFeedback, StyleSheet } from 'react-native';
 
 export class Video extends React.Component {
 
@@ -47,8 +47,8 @@ export class Video extends React.Component {
                 )}
                 
                 { !this.state.listLoaded && (
-                    <View style={{ paddingTop: 30}}>
-                        <Text> LOADING... </Text>
+                    <View style={{ paddingTop: 30, alignItems: 'center'}}>
+                        <Text> Loading... </Text>
                     </View>
                 )}      
 
@@ -82,3 +82,14 @@ export class TubeItem extends React.Component {
     }
 
 }
+
+
+const styles = StyleSheet.create({
+   
+    container: {
+      flex: 1,
+      backgroundColor: 'lightgray',
+      alignItems: 'center',
+      justifyContent: 'center'
+    }
+  });
